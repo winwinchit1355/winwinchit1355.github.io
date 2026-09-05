@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Free Web tutorials">
-    <meta name="keywords" content="Win Win Chit,win win chit, Win Win Chit Portfolio,win win chit portfolio">
+    <meta name="description" content="Win Win Chit - Senior Web Developer Portfolio">
+    <meta name="keywords" content="Win Win Chit, Senior Web Developer, Portfolio, Laravel, React, Vue">
     <meta name="author" content="Win Win Chit">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -14,460 +14,575 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
     <link rel="manifest" href="assets/images/favicon/site.webmanifest">
 
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
-
-    <!-- Scrollbar Custom CSS -->
-    <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script defer src="assets/js/fontawesome.min.js"></script>
     <link rel="stylesheet" href="assets/style.css">
-    <title>Win Win Chit</title>
+    <title>Win Win Chit | Senior Web Developer</title>
 </head>
-<!-- <body class="dark"> -->
 
-<body class="light">
-    <div id="loader" class="loader"></div>
-   
-    <div class="wrapper" style="display: none;">
-        <!-- Start of Sidebar -->
-        <nav id="sidebar" class="navbar flex-column align-items-stretch">
-            <div class="sidebar-header">
-                <div class="image-wrapper">
-                    <div class="image">
-                        <img class="small-profile" src="assets/images/avatar.jpg" alt="">
-                    </div>
-                </div>
-                <h2 class="name"><span class="highlight-text">W</span>in <span class="highlight-text">W</span>in <span
-                        class="highlight-text">C</span>hit</h2>
-                <div class="socials">
-                    <a class="social-icon" href="https://www.facebook.com/win.chit.5/"><i
-                            class="fa-brands fa-facebook"></i></a>
-                    <a class="social-icon" href="https://www.instagram.com/win.win.chit/"><i
-                            class="fa-brands fa-instagram"></i></a>
-                    <a class="social-icon" href="https://www.linkedin.com/in/win-win-chit-9bb303110/"><i
-                            class="fa-brands fa-linkedin"></i></a>
-                    <a class="social-icon" href="https://github.com/winwinchit1355"><i
-                            class="fa-brands fa-github"></i></a>
-                    <a class="social-icon" href="https://t.me/+959795864911"><i class="fa-brands fa-telegram"></i></a>
-                </div>
-            </div>
-            <div class="sidebar-main">
-                <div class="menu-items">
-                    <div class="menu-item"><a href="#home" class="menu-link active" id="home-link"><i
-                                class="fa-solid fa-house menu-icon highlight-text"></i>Home</a></div>
-                    <div class="menu-item"><a href="#about" class="menu-link" id="about-link"><i
-                                class="fa-solid fa-user menu-icon highlight-text "></i>About</a></div>
-                    <div class="menu-item"><a href="#skills" class="menu-link" id="skills-link"><i
-                                class="fa-solid fa-computer menu-icon highlight-text"></i>Skills</a></div>
-                    <div class="menu-item"><a href="#project" class="menu-link" id="project-link"><i
-                                class="fa-solid fa-user-gear menu-icon highlight-text"></i>Projects</a></div>
-                    <div class="menu-item"><a href="#contact" class="menu-link" id="contact-link"><i
-                                class="fa-solid fa-phone menu-icon highlight-text"></i>Contact</a></div>
-                    <div class="menu-item">
-                        <div class="theme-container">
-                            <label class="change-theme-label">
-                                <input type="checkbox" id="mode" class="change-theme-toggle">
-                                <span class="theme-slider round">
-                                    <i class="fa-solid fa-moon fa-sm  moon" id="moon"></i>
-                                    <i class="fa-solid fa-sun fa-sm  sun" id="sun"></i>
-                                </span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<body>
+    <div id="loader" class="loader"><span></span></div>
 
-            <a type="button" id="sidebarCollapse" class="btn btn-info">
-                <i class="fas fa-align-left"></i>
-            </a>
+    <!-- Static top navbar (visible on all screens) -->
+    <header class="topbar" id="topbar">
+        <a class="brand" href="#home">Win<span class="accent">.</span></a>
+        <nav class="topnav">
+            <a href="#home" class="nav-link active" data-section="home">Home</a>
+            <a href="#about" class="nav-link" data-section="about">About</a>
+            <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+            <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+            <a href="#contact" class="nav-link" data-section="contact">Contact</a>
         </nav>
-        <div id="overlay" class="open"></div>
-        <!-- End of Sidebar -->
-        <!-- Start of Page Content -->
-        <div id="content">
-            
-            <section id="home">
-                <div class="desktop-home">
-                    <div class="desktop-text-content text-content" >
-                        <div class="greeting-text">
-                            <h1>Hello! </h1>
-                        </div>
-                        <div class="dynamic-texts mb-3">
-                            <span class="first-text">I am </span>
-                            <span class="second-text highlight-text"></span>
-                        </div>
-                        <div class="intro-text">
-                            I've been working as a Backend Developer since August 2020, and I'm enthusiastic about
-                            learning new technologies and progressing toward becoming a full-stack developer.
-                        </div>
-                        <a class="mt-3 download-cv" href="assets/cv/WinWinChit_CV.pdf" download>Download CV</a>
-                    </div>
-                    <div class="desktop-image-content image-content">
-                        <img class="small-profile" src="assets/images/profile2.jpg" alt="">
-                    </div>
+        <div class="topbar-actions">
+            <a href="assets/cv/CV.pdf" download class="btn btn-ghost" id="cv-btn"><i class="fa-solid fa-download"></i> CV</a>
+            <button id="menu-toggle" class="menu-toggle" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </header>
 
+    <!-- Mobile drawer -->
+    <div class="drawer-backdrop" id="drawer-backdrop"></div>
+    <aside class="drawer" id="drawer">
+        <div class="drawer-header">
+            <span>Menu</span>
+            <button id="drawer-close" class="menu-toggle"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <a href="#home" class="drawer-link" data-section="home"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="#about" class="drawer-link" data-section="about"><i class="fa-solid fa-user"></i> About</a>
+        <a href="#skills" class="drawer-link" data-section="skills"><i class="fa-solid fa-laptop-code"></i> Skills</a>
+        <a href="#projects" class="drawer-link" data-section="projects"><i class="fa-solid fa-briefcase"></i> Projects</a>
+        <a href="#contact" class="drawer-link" data-section="contact"><i class="fa-solid fa-phone"></i> Contact</a>
+        <div class="drawer-footer">
+            <a href="assets/cv/CV.pdf" download class="btn btn-primary w-100">Download CV</a>
+        </div>
+    </aside>
+
+    <main>
+        <!-- ======= HERO ======= -->
+        <section id="home" class="hero">
+            <div class="hero-bg-accent"></div>
+            <div class="container hero-grid">
+                <div class="hero-content reveal">
+                    <span class="hero-tag">👋 Hello, my name is</span>
+                    <h1 class="hero-name">Win Win Chit</h1>
+                    <h2 class="hero-role">
+                        <span class="static">Senior</span> <span class="accent typing" id="typed"></span>
+                    </h2>
+                    <p class="hero-desc">
+                        Senior Web Developer with 6+ years of experience building robust web applications with Laravel, React and Vue. I love transforming complex requirements into clean, scalable, and user-friendly solutions.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">View My Work</a>
+                    </div>
+                    <div class="hero-socials">
+                        <a href="https://www.facebook.com/win.chit.5/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/win.win.chit/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/win-win-chit-9bb303110/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://github.com/winwinchit1355" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://t.me/+959795864911" target="_blank" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+                    </div>
                 </div>
-                <div class="mobile-home">
-                    <div class="mobile-image-content image-content">
-                        <img class="small-profile" src="assets/images/profile2.jpg" alt="">
-                    </div>
-                    <div class="mobile-text-content text-content">
-                        <div class="dynamic-texts ">
-                            <span class="first-text">I am </span>
-                            <span class="second-text highlight-text"></span>
+                <div class="hero-visual reveal">
+                    <div class="photo-stage">
+                        <div class="photo-ring">
+                            <img src="assets/images/profile2.jpg" alt="Win Win Chit">
+                            <div class="exp-badge">
+                                <span class="exp-num">6+</span>
+                                <span class="exp-label">Years<br>Experience</span>
+                            </div>
                         </div>
+                        <div class="float-chip chip-1"><i class="fa-brands fa-laravel"></i> Laravel</div>
+                        <div class="float-chip chip-2"><i class="fa-brands fa-react"></i> React</div>
+                        <div class="float-chip chip-5"><i class="fa-solid fa-mobile-screen-button"></i><span>React Native</span></div>
+                        <div class="float-chip chip-3"><i class="fa-brands fa-vuejs"></i> Vue</div>
+                        <div class="float-chip chip-4"><i class="fa-brands fa-php"></i> PHP</div>
                     </div>
-                    <div class="intro-text">
-                        I've been working as a Backend Developer since August 2020, and I'm enthusiastic about learning
-                        new technologies and progressing toward becoming a full-stack developer.
-                    </div>
-                    <a class="download-cv" href="assets/cv/WinWinChit_CV.pdf" download>Download CV</a>
+                </div>
+            </div>
+            <a href="#about" class="scroll-down" aria-label="Scroll down"><i class="fa-solid fa-chevron-down"></i></a>
+        </section>
+
+        <!-- ======= ABOUT ======= -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-eyebrow">About Me</span>
+                    <h2 class="section-title">A little bit <span class="accent">about</span> myself</h2>
+                    <p class="section-sub">Senior Web Developer — passionate about building scalable products, improving development processes, and driving projects from requirements to delivery</p>
                 </div>
 
+                <div class="about-grid">
+                    <div class="about-info reveal">
+                        <table class="info-table">
+                            <tr><td class="k">Name</td><td>Ms. Win Win Chit</td></tr>
+                            <tr><td class="k">Nationality</td><td>Myanmar</td></tr>
+                            <tr><td class="k">Location</td><td>Yangon, Myanmar</td></tr>
+                            <tr><td class="k">Phone</td><td>(+95) 9795864911</td></tr>
+                            <tr><td class="k">Email</td><td><a href="mailto:winwinchit1355@gmail.com">winwinchit1355@gmail.com</a></td></tr>
+                            <tr><td class="k">Website</td><td>winwinchit1355.github.io</td></tr>
+                            <tr><td class="k">Position</td><td>Senior Web Developer</td></tr>
+                        </table>
+                    </div>
+                    <div class="about-highlights reveal">
+                        <div class="highlight-card">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                            <div>
+                                <span class="h-title">What I Love</span>
+                                <p>Clean code, solving challenging problems, and learning new technologies.</p>
+                            </div>
+                        </div>
+                        <div class="highlight-card">
+                            <i class="fa-solid fa-people-group"></i>
+                            <div>
+                                <span class="h-title">Other Skills</span>
+                                <p>Team collaboration, leadership, mentoring, adaptability, and working under pressure.</p>
+                            </div>
+                        </div>
+                        <div class="highlight-card">
+                            <i class="fa-solid fa-bullseye"></i>
+                            <div>
+                                <span class="h-title">Attitude to Work</span>
+                                <p>Self-motivated, responsible, proactive, and committed to delivering quality work.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                <!-- <div class="text-content">
-                    <div class="text-start"><p>Hello, I am </p></div>
-                    <div class="typing"> 
-                        <div class="typing-text highlight-text">Win Win Chit</div>
+                <!-- Education timeline -->
+                <div class="sub-block reveal">
+                    <h3 class="block-title"><i class="fa-solid fa-graduation-cap accent"></i> Education</h3>
+                    <div class="edu-list">
+                        <div class="edu-item">
+                            <span class="edu-year">2014 – 2016</span>
+                            <div class="edu-body">
+                                <h4>Master of Computer Technology <span class="tag">Not Finished Thesis</span></h4>
+                                <p>University of Computer Studies, Yangon</p>
+                            </div>
+                        </div>
+                        <div class="edu-item">
+                            <span class="edu-year">2012 – 2013</span>
+                            <div class="edu-body">
+                                <h4>Bachelor of Computer Technology (Hons.)</h4>
+                                <p>University of Computer Studies, Thaton</p>
+                            </div>
+                        </div>
+                        <div class="edu-item">
+                            <span class="edu-year">2010 – 2012</span>
+                            <div class="edu-body">
+                                <h4>Bachelor of Computer Technology (B.C.Tech)</h4>
+                                <p>University of Computer Studies, Mawlamyine</p>
+                            </div>
+                        </div>
+                        <div class="edu-item">
+                            <span class="edu-year">Certifications</span>
+                            <div class="edu-body">
+                                <h4>Professional Certifications</h4>
+                                <p>Professional Web Developer &amp; Graphic Design (Fairway), React.js, Game Development, Oracle Database 11g &amp; Network Engineering (ICTTI), Rockstar Development</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="intro-text">
-                        <p>
-                            I am working as a Backend Developer since August 2020. I am willing to learn new technologies and become full stack developer.
-                        </p>
-                    </div>
-                </div> -->
+                </div>
 
-            </section>
-            <section id="about" class="section">
-                <h1 align="center" class="shade-title">About Me</h1>
-                <div class="row ">
-                    <div class="col-md-12 col-sm-12 p-4 mb-5">
-                        <h4 align="center" class="education-background"><span class="highlight-text ">Education</span> Background</h4>
-                        <ul class="timeline">
-                            <!-- Item 1 -->
-                            <li>
-                                <div class="direction-r">
-                                    <div class="flag-wrapper">
-                                        <span class="hexa"></span>
-                                        <span class="flag">Computer University(Thaton)</span>
-                                        <span class="time-wrapper"><span class="time">2013-2014</span></span>
-                                    </div>
-                                    <div class="desc">I graduated Bachelor of Computer technology after attending for 3 years.</div>
-                                </div>
-                            </li>
-                            <!-- Item 2 -->
-                            <li>
-                                <div class="direction-l">
-                                    <div class="flag-wrapper">
-                                        <span class="hexa"></span>
-                                        <span class="flag">Computer University(Thaton)</span>
-                                        <span class="time-wrapper"><span class="time">2014-2015</span></span>
-                                    </div>
-                                    <div class="desc">Then, I graduated Bachelor of Computer technology(Hons.) after attending for 1 year.</div>
-                                </div>
-                            </li>
-                            <!-- Item 3 -->
-                            <li>
-                                <div class="direction-r">
-                                    <div class="flag-wrapper">
-                                        <span class="hexa"></span>
-                                        <span class="flag">ICTTI</span>
-                                        <span class="time-wrapper"><span class="time">2015-2016</span></span>
-                                    </div>
-                                    <div class="desc">I got diplomas of Networking Engineer Course and Oracle Database 11g Course from ICTTI. 
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- Item 4 -->
-                            <li>
-                                <div class="direction-l">
-                                    <div class="flag-wrapper">
-                                        <span class="hexa"></span>
-                                        <span class="flag">Fairway Technology</span>
-                                        <span class="time-wrapper"><span class="time">2019</span></span>
-                                    </div>
-                                    <div class="desc">I got a certificate of Professional Web Developer Course from Fairway Technology Tranining School.
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+                <!-- Experience timeline -->
+                <div class="sub-block reveal">
+                    <h3 class="block-title"><i class="fa-solid fa-briefcase accent"></i> Experience</h3>
+                    <div class="exp-timeline">
+                        <div class="exp-item">
+                            <div class="exp-dot"></div>
+                            <div class="exp-content">
+                                <span class="exp-date">May 2025 – Present</span>
+                                <h4>Senior Web Developer</h4>
+                                <span class="exp-company">Min Shin Saw</span>
+                                <ul>
+                                    <li>Developed and enhanced products using Laravel, Filament, React and Vue.</li>
+                                    <li>Led, managed, and mentored team members, coordinating development tasks and ensuring timely delivery.</li>
+                                    <li>Managed project timelines, priorities, and workloads throughout the development lifecycle.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="exp-item">
+                            <div class="exp-dot"></div>
+                            <div class="exp-content">
+                                <span class="exp-date">Jun 2024 – Apr 2025</span>
+                                <h4>Senior Web Developer</h4>
+                                <span class="exp-company">Myanmar Software Integrated Solutions</span>
+                                <ul>
+                                    <li>Developed and maintained Laravel applications, including KBZPay and AYA Pay integrations.</li>
+                                    <li>Implemented Twilio Live Chat and customized a Moodle-based LMS.</li>
+                                    <li>Deployed and maintained applications on Ubuntu cloud servers.</li>
+                                    <li>Led and mentored junior developers with code reviews and technical guidance.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="exp-item">
+                            <div class="exp-dot"></div>
+                            <div class="exp-content">
+                                <span class="exp-date">Mar 2023 – Jun 2024</span>
+                                <h4>Web Developer</h4>
+                                <span class="exp-company">GMO-Z.com ACE Company Ltd</span>
+                                <ul>
+                                    <li>Built Laravel web apps: e-commerce, CMS, and RESTful APIs for mobile.</li>
+                                    <li>Integrated KBZ Pay, AYA Pay, Google Analytics and GTM; implemented SEO best practices.</li>
+                                    <li>Deployed across Ubuntu Cloud VPS, Plesk, and cPanel environments.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="exp-item">
+                            <div class="exp-dot"></div>
+                            <div class="exp-content">
+                                <span class="exp-date">Aug 2020 – Feb 2023</span>
+                                <h4>Web Developer</h4>
+                                <span class="exp-company">Solutions Hub Company Ltd</span>
+                                <ul>
+                                    <li>Developed websites using PHP, Laravel and React (frontend &amp; backend).</li>
+                                    <li>Maintained and customized WordPress projects.</li>
+                                    <li>Analyzed requirements, designed databases, and provided client training and support.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="exp-item">
+                            <div class="exp-dot"></div>
+                            <div class="exp-content">
+                                <span class="exp-date">Jan 2019 – Jul 2020</span>
+                                <h4>System Support</h4>
+                                <span class="exp-company">Myanmar Fiber Optic Communication Network Company Ltd</span>
+                                <ul>
+                                    <li>Supported software testing, identified issues, and reported errors.</li>
+                                    <li>Prepared user manuals and provided training; managed access rights in Odoo ERP.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="exp-item">
+                            <div class="exp-dot"></div>
+                            <div class="exp-content">
+                                <span class="exp-date">2017 – 2019</span>
+                                <h4>Merchant</h4>
+                                <span class="exp-company">Own Business</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-12 col-sm-12">
-                        <h4 align="center" class="working-background mb-5"><span class="highlight-text">Working</span> Background</h4>
-                        <div class="experiense ms-ex-box mt-6 ">
-                            <ul class="w-timeline">
-                                <li class="w-timeline-item opacity-0">
-                                    <div class="w-timeline-info">
-                                        <span>March 2023 - Present</span>
-                                    </div>
-                                    <div class="w-timeline-content">
-                                        <h5 class="w-timeline-title">GMO-Z.com<span class="sub">- Senior Web Developer</span></h5>
-                                        <p>Develop websites with Laravel for both front-end and back-end. Maintain and fix bug. Attend client meeting and give training. Collect user requirements and analysis system flow. Create database design. Solve customer complaints.</p>
-                                        <div>
-                                            <span class="badge rounded-pill bg-primary">HTML</span>
-                                            <span class="badge rounded-pill bg-primary">CSS</span>
-                                            <span class="badge rounded-pill bg-primary">Jquery</span>
-                                            <span class="badge rounded-pill bg-primary">Bootstrap</span>
-                                            <span class="badge rounded-pill bg-primary">Laravel</span>
-                                            <span class="badge rounded-pill bg-primary">MySQL</span>
-                                            <span class="badge rounded-pill bg-primary">API</span>
-                                            <span class="badge rounded-pill bg-primary">Cpanel</span>
-                                            <span class="badge rounded-pill bg-primary">Plesk</span>
-                                            <span class="badge rounded-pill bg-primary">Cloud VPS</span>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="w-timeline-item opacity-0">
-                                    <div class="w-timeline-info">
-                                        <span>Aug 2020 - March 2023</span>
-                                    </div>
-                                    <div class="w-timeline-content">
-                                        <h5 class="w-timeline-title">Solutions Hub<span class="sub">- Web Developer</span>
-                                        </h5>
-                                        <p>Develop websites with PHP, Laravel and React for both front-end and back-end. Maintain and fix bug. Attend client meeting and give training. Collect user requirements and analysis system flow. Create database design. Solve customer complaints.
-                                        </p>
-                                        <div>
-                                            <span class="badge rounded-pill bg-primary">HTML</span>
-                                            <span class="badge rounded-pill bg-primary">CSS</span>
-                                            <span class="badge rounded-pill bg-primary">Jquery</span>
-                                            <span class="badge rounded-pill bg-primary">Bootstrap</span>
-                                            <span class="badge rounded-pill bg-primary">PHP</span>
-                                            <span class="badge rounded-pill bg-primary">Laravel</span>
-                                            <span class="badge rounded-pill bg-primary">MySQL</span>
-                                            <span class="badge rounded-pill bg-primary">React</span>
-                                            <span class="badge rounded-pill bg-primary">API</span>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="w-timeline-item opacity-0">
-                                    <div class="w-timeline-info">
-                                        <span>Jan 2019 - Aug 2020</span>
-                                    </div>
-                                    <div class="w-timeline-content">
-                                        <h5 class="w-timeline-title">Myanmar Fiber Optic Communication Network Co.,Ltd<span class="sub">- Tester</span>
-                                        </h5>
-                                        <p>Support software testing and report system error. Make user manual and support training. Report daily system status and weekly job process. Handle customer complaints and collect user requirements. Manage user access rights of Odoo system and customer data using ERP’s peek client.
-                                        </p>
-                                        <div>
-                                            <span class="badge rounded-pill bg-primary">PostgreSQL Query</span>
-                                            <span class="badge rounded-pill bg-primary">ERP peek</span>
-                                        </div>
-                                    </div>
-                                </li>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======= SKILLS ======= -->
+        <section id="skills" class="section section-alt">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-eyebrow">Skills</span>
+                    <h2 class="section-title">My <span class="accent">technical</span> toolbox</h2>
+                    <p class="section-sub">Technologies I use to build robust, scalable and delightful web experiences.</p>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-group reveal">
+                        <h3 class="skill-group-title"><span class="dot-pink"></span> Backend</h3>
+                        <div class="skill-chips">
+                            <span class="chip">PHP</span><span class="chip">Laravel</span>
+                        </div>
+                    </div>
+                    <div class="skill-group reveal">
+                        <h3 class="skill-group-title"><span class="dot-blue"></span> Frontend</h3>
+                        <div class="skill-chips">
+                            <span class="chip">HTML</span>
+                            <span class="chip">CSS</span>
+                            <span class="chip">JavaScript</span>
+                            <span class="chip">jQuery</span>
+                            <span class="chip">AJAX</span>
+                            <span class="chip">Bootstrap</span>
+                            <span class="chip">Tailwind</span>
+                            <span class="chip">React JS</span>
+                            <span class="chip">React Native</span>
+                            <span class="chip">Vue JS</span>
+                        </div>
+                    </div>
+                    <div class="skill-group reveal">
+                        <h3 class="skill-group-title"><span class="dot-green"></span> Database</h3>
+                        <div class="skill-chips">
+                            <span class="chip">MySQL</span><span class="chip">PostgreSQL</span>
+                        </div>
+                    </div>
+                    <div class="skill-group reveal">
+                        <h3 class="skill-group-title"><span class="dot-purple"></span> Servers &amp; Infra</h3>
+                        <div class="skill-chips">
+                            <span class="chip">Apache</span><span class="chip">Nginx</span><span class="chip">cPanel</span><span class="chip">Plesk</span><span class="chip">Cloud VPS</span><span class="chip">DigitalOcean</span><span class="chip">Linux</span><span class="chip">Windows</span><span class="chip">Mac</span>
+                        </div>
+                    </div>
+                    <div class="skill-group reveal">
+                        <h3 class="skill-group-title"><span class="dot-orange"></span> Tools &amp; Third-party</h3>
+                        <div class="skill-chips">
+                            <span class="chip">Git</span><span class="chip">VS Code</span><span class="chip">Sublime Text</span><span class="chip">Figma</span><span class="chip">KBZPay Mini App</span><span class="chip">MPU / AYA Pay</span><span class="chip">SMSPoh</span><span class="chip">Moodle</span><span class="chip">Pusher</span><span class="chip">Firebase</span><span class="chip">Twilio</span><span class="chip">tawk.to</span><span class="chip">Supabase</span><span class="chip">Google Login</span><span class="chip">Facebook Login</span><span class="chip">OneLogin (SSO)</span><span class="chip">SMTP</span><span class="chip">Google Analytics</span><span class="chip">GTM</span><span class="chip">Playwright</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="languages reveal">
+                    <h3 class="skill-group-title"><span class="dot-red"></span> Languages</h3>
+                    <div class="lang-list">
+                        <div class="lang-item">
+                            <span class="lang-name">Myanmar</span>
+                            <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
+                            <span class="lang-level">Native</span>
+                        </div>
+                        <div class="lang-item">
+                            <span class="lang-name">English</span>
+                            <div class="lang-bar"><div class="lang-fill" style="width:70%"></div></div>
+                            <span class="lang-level">Intermediate</span>
+                        </div>
+                        <div class="lang-item">
+                            <span class="lang-name">Chinese</span>
+                            <div class="lang-bar"><div class="lang-fill" style="width:30%"></div></div>
+                            <span class="lang-level">Basic</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======= PROJECTS ======= -->
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-eyebrow">Portfolio</span>
+                    <h2 class="section-title">Featured <span class="accent">projects</span></h2>
+                    <p class="section-sub">A selection of products and platforms I've developed and maintained.</p>
+                </div>
+
+                <div class="projects-grid">
+                    <article class="project-card reveal">
+                        <div class="project-body">
+                            <h3 class="project-name">EduPlus</h3>
+                            <p class="project-stack">Laravel · Vue.js</p>
+                            <ul class="project-desc">
+                                <li>Education management system for teachers, guardians and students.</li>
+                                <li>Managed courses, batches, classes, timetables and attendance.</li>
+                                <li>Implemented report cards, lesson plans, assignments and homework.</li>
+                                <li>Developed payment management for tracking student payments and fees.</li>
+                                <li>In-system chat for communication between users.</li>
+                                <li>RESTful APIs for mobile applications and system integrations.</li>
+                                <li>Used DigitalOcean for file and image storage.</li>
                             </ul>
                         </div>
-                    </div>
-                </div>
-            </section>
-            <section id="skills">
-                <h1 align="center" class="shade-title">Skills</h1>
-                <div class="row">
-                    <h4 align="center" class="education-background mt-3 mb-5"><span class="highlight-text">Technical</span> Skills</h4>
-                    <div class="col-md-6 col-sm-12">
-                        <!-- <h4 align="center" class="education-background"><span class="highlight-text">Frontend</span> Skills</h4> -->
-                        <div class="row">
-                            <div class="col-3 text-center skill-icon"><i class="fa-brands fa-html5"></i></div>
-                            <div class="col-8 skill-underline"><span>HTML</span></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-3 text-center skill-icon"><i class="fa-brands fa-css3"></i></div>
-                            <div class="col-8 skill-underline"><span>CSS</span></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-3 text-center skill-icon"><i class="fa-brands fa-js"></i></div>
-                            <div class="col-8 skill-underline"><span>Javascript</span></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-3 text-center skill-icon"><i class="fa-brands fa-js"></i></div>
-                            <div class="col-8 skill-underline"><span>Jquery</span></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-3 text-center skill-icon"><i class="fa-brands fa-js"></i></div>
-                            <div class="col-8 skill-underline"><span>AJAX</span></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-3 text-center skill-icon"><i class="fa-brands fa-bootstrap"></i></div>
-                            <div class="col-8 skill-underline"><span>Bootstrap</span></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-3 text-center skill-icon"><i class="fa-brands fa-react"></i></div>
-                            <div class="col-8 skill-underline"><span>React</span></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-3 text-center skill-icon"><i class="fa-brands fa-php"></i></div>
-                            <div class="col-8 skill-underline"><span>PHP</span></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-3 text-center skill-icon"><i class="fa-brands fa-laravel"></i></div>
-                            <div class="col-8 skill-underline"><span>Laravel</span></div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-12">
-                        <!-- <h4 align="center" class="education-background"><span class="highlight-text">Backend</span> Skills</h4> -->
-                        
-                        <div class="row">
-                            <div class="col-3 text-center skill-icon"><i class="fa-solid fa-server"></i></div>
-                            <div class="col-8 skill-underline"><span>Apache</span></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-3 text-center skill-icon"><i class="fa-solid fa-database"></i></div>
-                            <div class="col-8 skill-underline"><span>MySql</span></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-3 text-center skill-icon"><i class="fa-brands fa-windows"></i></div>
-                            <div class="col-8 skill-underline"><span>Window</span></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-3 text-center skill-icon"><i class="fa-brands fa-linux"></i></div>
-                            <div class="col-8 skill-underline"><span>Linux</span></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-3 text-center skill-icon"><i class="fa-brands fa-cpanel"></i></div>
-                            <div class="col-8 skill-underline"><span>Cpanel</span></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-3 text-center skill-icon"><i class="fa-solid fa-p"></i></div>
-                            <div class="col-8 skill-underline"><span>Plesk Panel</span></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-3 text-center skill-icon"><i class="fa-solid fa-cloud"></i></div>
-                            <div class="col-8 skill-underline"><span>Cloud VPS</span></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-3 text-center skill-icon"><i class="fa-brands fa-git"></i></div>
-                            <div class="col-8 skill-underline"><span>Git</span></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <h4 align="center" class="education-background mt-3 mb-5"><span class="highlight-text">Language</span> Skills</h4>
-                    <div class="col-md-12 col-sm-12">
-                        <!-- <h4 align="center" class="education-background"><span class="highlight-text">Frontend</span> Skills</h4> -->
-                        <div class="row">
-                            <div class="col-3 text-center skill-icon"><i class="flag-icon flag-icon-mm"></i></div>
-                            <div class="col-8 skill-underline"><span>Myanmar </span>
-                                <div class="progress">
-                                    <div class="progress-bar bg-c-blue" style="width:100%">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-3 text-center skill-icon"><i class="flag-icon flag-icon-us"></i></div>
-                            <div class="col-8 skill-underline"><span>English </span>
-                                <div class="progress">
-                                    <div class="progress-bar bg-c-blue" style="width:60%">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-3 text-center skill-icon"><i class="flag-icon flag-icon-cn"></i></div>
-                            <div class="col-8 skill-underline"><span>Chinese </span>
-                                <div class="progress">
-                                    <div class="progress-bar bg-c-blue" style="width:25%">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section id="project">
-                <h1 align="center" class="shade-title">Projects</h1>
-                <div class="row">
-                    <h4 align="center" class="education-background mt-3 mb-5"><span class="highlight-text">Project</span> Background</h4>
-                    <div class="col-md-6 col-sm-12">
-                        <div class="card rounded shadow-sm border-0 project-card m-3 opacity-0"> 
-                            <div class="card-body">
-                                <img class="img-fluid d-block mx-auto mb-3" src="/assets/images/projects/htdc.png" alt="Card image cap">
-                              <h5 class="card-title">Yoon Skin Ecommerce</h5>
-                              <a href="https://yoonskin.com.mm/" class="btn card-button project-button" target="_blank">View More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-12">
-                        <div class="card rounded shadow-sm border-0 project-card m-3 opacity-0"> 
-                            <div class="card-body">
-                                <img class="img-fluid d-block mx-auto mb-3" src="/assets/images/projects/lotayacare.PNG" alt="Card image cap">
-                              <h5 class="card-title">Service Booking with Ecommerce</h5>
-                              <a href="https://lotayacare.com/" class="btn card-button project-button" target="_blank">View More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-12">
-                        <div class="card rounded shadow-sm border-0 project-card m-3 opacity-0"> 
-                            <div class="card-body">
-                                <img class="img-fluid d-block mx-auto mb-3" src="/assets/images/projects/license-booking.PNG" alt="Card image cap">
-                              <h5 class="card-title">Spectrum License Booking</h5>
-                              <a href="https://resource.ptd.gov.mm/" class="btn card-button project-button" target="_blank">View More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-12">
-                        <div class="card rounded shadow-sm border-0 project-card m-3 opacity-0">
-                            <div class="card-body">
-                                <img class="img-fluid d-block mx-auto mb-3" src="/assets/images/projects/cpu.PNG" alt="Card image cap">
-                                <h5 class="card-title">CPU Kachin</h5>
-                                <a href="https://cpu-kachin.gov.mm/" class="btn card-button project-button" target="_blank">View More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-12">
-                        <div class="card rounded shadow-sm border-0 project-card m-3 opacity-0">
-                            <div class="card-body">
-                                <img class="img-fluid d-block mx-auto mb-3" src="/assets/images/projects/erp.PNG" alt="Card image cap">
-                                <h5 class="card-title">Ecommerce</h5>
-                                <a href="https://ecommerce.dev-mm.shop/" class="btn border-0 card-button project-button" target="_blank">View More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-12">
-                        <div class="card rounded shadow-sm border-0 project-card m-3 opacity-0">
-                            <div class="card-body">
-                                <img class="img-fluid d-block mx-auto mb-3" src="/assets/images/projects/default.png" alt="Card image cap">
-                                <h5 class="card-title">Library Management System</h5>
-                                <a href="#" class="btn card-button project-button">View More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section id="contact">
-                <h1 align="center" class="shade-title mb-5">Contact Me</h1>
-                <div class="contact-details">
-                    <div class="mt-6">
-                        +95 9795864911
-                    </div>
-                    <div class="mt-3">
-                        winwinchit1355@gmail.com
-                    </div>
-                </div>
-                <div class="socials my-5">
-                    <a class="social-icon" href="https://www.facebook.com/win.chit.5/"><i
-                            class="fa-brands fa-facebook"></i></a>
-                    <a class="social-icon" href="https://www.instagram.com/win.win.chit/"><i
-                            class="fa-brands fa-instagram"></i></a>
-                    <a class="social-icon" href="https://www.linkedin.com/in/win-win-chit-9bb303110/"><i
-                            class="fa-brands fa-linkedin"></i></a>
-                    <a class="social-icon" href="https://github.com/winwinchit1355"><i
-                            class="fa-brands fa-github"></i></a>
-                    <a class="social-icon" href="https://t.me/+959795864911"><i class="fa-brands fa-telegram"></i></a>
-                </div>
-            </section>
-        </div>
-        <!-- End of Page Content -->
-    </div>
+                    </article>
 
-    <!-- jQuery CDN - Slim version (=without AJAX) -->
+                    <article class="project-card reveal">
+                        <div class="project-body">
+                            <h3 class="project-name">MerryMarry</h3>
+                            <p class="project-stack">Filament · React.js</p>
+                            <ul class="project-desc">
+                                <li>Wedding invitation platform for creating and managing digital wedding invitations.</li>
+                                <li>CMS for wedding services and content management.</li>
+                                <li>RESTful APIs for mobile applications and system integrations.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-body">
+                            <h3 class="project-name">ExamPlus</h3>
+                            <p class="project-stack">Filament · React.js · Vue.js · Next.js</p>
+                            <ul class="project-desc">
+                                <li>Online examination platform for creating and managing questions and exams.</li>
+                                <li>Implemented online test/exam functionality for students.</li>
+                                <li>KBZPay Mini App integration for payment and exam-related services.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-body">
+                            <h3 class="project-name">PyaeWaKywal RealEstate</h3>
+                            <p class="project-stack">Filament · Inertia · React.js</p>
+                            <ul class="project-desc">
+                                <li>CMS for real estate property management and content management.</li>
+                                <li>Property image upload and storage using local and cloud storage.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-body">
+                            <h3 class="project-name">Warrier Website</h3>
+                            <p class="project-stack">HTML · CSS</p>
+                            <ul class="project-desc">
+                                <li>CMS-based website for Warrier School.</li>
+                                <li>Content management for school information and website content.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-body">
+                            <h3 class="project-name">Service Care</h3>
+                            <p class="project-stack">Laravel</p>
+                            <ul class="project-desc">
+                                <li>Admin panel for item management and air conditioner service management.</li>
+                                <li>RESTful APIs to support the mobile application.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-body">
+                            <h3 class="project-name">Moodle Based LMS</h3>
+                            <p class="project-stack">PHP · Moodle</p>
+                            <ul class="project-desc">
+                                <li>Customized Moodle-based LMS to meet project requirements.</li>
+                                <li>Customized UI and dashboard components.</li>
+                                <li>Implemented calendar event management.</li>
+                                <li>Added dashboard charts for data visualization.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-body">
+                            <h3 class="project-name">CPU Kachin</h3>
+                            <p class="project-stack">Laravel</p>
+                            <ul class="project-desc">
+                                <li>CMS for managing website content.</li>
+                                <li>Content management features for dynamic website updates.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-body">
+                            <h3 class="project-name">Lotaya Care</h3>
+                            <p class="project-stack">Laravel</p>
+                            <ul class="project-desc">
+                                <li>E-commerce platform for medicine and healthcare products.</li>
+                                <li>Booking system for healthcare-related services.</li>
+                                <li>Product management, shopping cart and order management features.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-body">
+                            <h3 class="project-name">Yoon Skin Ecommerce</h3>
+                            <p class="project-stack">Laravel</p>
+                            <ul class="project-desc">
+                                <li>E-commerce platform for skincare products.</li>
+                                <li>Product, shopping cart and order management features.</li>
+                                <li>Integrated Dinger for online payment processing.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-body">
+                            <h3 class="project-name">Ecommerce Platform</h3>
+                            <p class="project-stack">Laravel</p>
+                            <ul class="project-desc">
+                                <li>E-commerce frontend and admin panel.</li>
+                                <li>RESTful APIs for integration with external POS systems.</li>
+                                <li>Product synchronization by fetching products from the POS system.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-body">
+                            <h3 class="project-name">Spectrum License Booking</h3>
+                            <p class="project-stack">Laravel</p>
+                            <ul class="project-desc">
+                                <li>Online licensing and spectrum authorization management system.</li>
+                                <li>Spectrum reporting workflow for staff submission and supervisor approval.</li>
+                                <li>License certificate generation and printing functionality.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-body">
+                            <h3 class="project-name">Online Booking Appointment System</h3>
+                            <p class="project-stack">PHP</p>
+                            <ul class="project-desc">
+                                <li>Maintained and fixed bugs in an online appointment booking system for car license services.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-body">
+                            <h3 class="project-name">Qcenter Management System</h3>
+                            <p class="project-stack">Laravel</p>
+                            <ul class="project-desc">
+                                <li>Developed and maintained reporting features.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-body">
+                            <h3 class="project-name">Library Management System</h3>
+                            <p class="project-stack">Laravel</p>
+                            <ul class="project-desc">
+                                <li>Maintained and provided ongoing support for the library management system.</li>
+                                <li>Fixed bugs and resolved issues related to book and member management.</li>
+                                <li>Maintained book rental and return functionality.</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="other-projects reveal">
+                    <h3 class="block-title"><i class="fa-solid fa-folder-open accent"></i> Other Projects</h3>
+                    <div class="other-project-list">
+                        <span class="chip">BOSS (BSS/OSS) system for ISP companies</span>
+                        <span class="chip">Revenue system for marketing and finance departments of MFOCN</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======= CONTACT ======= -->
+        <section id="contact" class="section section-alt">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="section-eyebrow">Contact</span>
+                    <h2 class="section-title">Let's build something <span class="accent">together</span></h2>
+                    <p class="section-sub">Have a project in mind or want to collaborate? I'd love to hear from you.</p>
+                </div>
+
+                <div class="contact-grid reveal">
+                    <a class="contact-card" href="tel:+959795864911">
+                        <i class="fa-solid fa-phone"></i>
+                        <span class="c-label">Phone</span>
+                        <span class="c-value">(+95) 9795864911</span>
+                    </a>
+                    <a class="contact-card" href="mailto:winwinchit1355@gmail.com">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span class="c-label">Email</span>
+                        <span class="c-value">winwinchit1355@gmail.com</span>
+                    </a>
+                    <a class="contact-card" href="https://t.me/+959795864911" target="_blank">
+                        <i class="fa-brands fa-telegram"></i>
+                        <span class="c-label">Telegram</span>
+                        <span class="c-value">winwinchit1355</span>
+                    </a>
+                </div>
+
+                <div class="contact-socials reveal">
+                    <a href="https://www.facebook.com/win.chit.5/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/win.win.chit/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/win-win-chit-9bb303110/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://github.com/winwinchit1355" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://t.me/+959795864911" target="_blank" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>© <span id="year"></span> Win Win Chit · Senior Web Developer</p>
+    </footer>
+
+    <button id="scroll-top" class="scroll-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
     <script src="assets/js/jquery.js"></script>
-    <!-- Popper.JS -->
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/fontawesome.min.js"></script>
-    <!-- jQuery Custom Scroller CDN -->
-    <script type="text/javascript" src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="assets/script.js"></script>
 </body>
 

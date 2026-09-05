@@ -1,181 +1,105 @@
-const words=["Win Win Chit","a Web Developer","a Freelancer"];
-const dynamicText=$(".second-text");
+/* ==========================================================================
+   Win Win Chit — Portfolio Scripts
+   ========================================================================== */
 
-let wordIndex=0;
-let charIndex=0;
-let isDeleting=false;
-
-const typeEffect = () =>{
-    const currentWord= words[wordIndex];
-    const currentChar= currentWord.substring(0,charIndex);
-    dynamicText.text(currentChar);
-    dynamicText.addClass("stop-blinking");
-    if(!isDeleting && charIndex < currentWord.length)
-    {
-        // If condition is true, remove the previous character
-        charIndex++;
-        setTimeout(typeEffect,200);
-    }else if(isDeleting && charIndex > 0)
-    {
-        // If condition is true, remove the previous character
-        charIndex--;
-        setTimeout(typeEffect, 100);
-    }else {
-        // If word is deleted then switch to the next word
-        isDeleting = !isDeleting;
-        dynamicText.removeClass("stop-blinking");
-        wordIndex = !isDeleting ? (wordIndex + 1) % words.length : wordIndex;
-        setTimeout(typeEffect, 1200);
-    }
-}
-$('#sidebarCollapse').on('click', function () {
-    $('#sidebar, #content ,#overlay' ).toggleClass('open');
-    $(this).toggleClass('open');
-});
-$('.menu-link').click(function(){
-    $('.menu-link').removeClass('active');
-    $(this).addClass('active');
-})
-// theme change 
-const changeTheme = $('#mode');
-
-changeTheme.on('change', function() {
-    if ($(this).prop('checked')) {
-    // console.log("Checked");
-    $('body').removeClass("dark").addClass("light");
-    darkToLight();
-    window.localStorage.setItem('mode', 'light');
-    } else {
-    // console.log("Not Checked");
-    $('body').removeClass("light").addClass("dark");
-    lightToDark();
-    window.localStorage.setItem('mode', 'dark');
-    }
-});
-function darkToLight(){
-    $('#moon').removeClass('fa-spin');
-    $('#sun').addClass('fa-spin');
-}
-function lightToDark(){
-    $('#sun').removeClass('fa-spin');
-    $('#moon').addClass('fa-spin');
-}
-// get click event outside sidebar
-$('#overlay').on('click',function(){
-    // const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
-    // console.log(viewportWidth)
-    // if(viewportWidth < 768)
-    // {
-        $('#sidebar,#sidebarCollapse,#content,#overlay').removeClass('open');
-    // }
-});
 $(document).ready(function () {
+    // ----- Loader -----
+    setTimeout(function () {
+        $('#loader').addClass('hidden');
+    }, 900);
+    setTimeout(function () {
+        $('#loader').remove();
+    }, 1500);
 
-    $('.home-link').addClass('active');
-    
-    // loader
-    setTimeout(function () {
-        $('#loader').css({"display":"none"});
-        $('.wrapper').css({"display":"block"});
-    }, 3000);
-    setTimeout(function () {
-        $('#sidebar').addClass('open');
-        $('#sidebarCollapse').addClass('open');
-        $('#content').addClass('open');
-        $('.download-cv').addClass('downup-animation');
-        const mode = window.localStorage.getItem('mode');
-        if (mode === 'light') {
-            changeTheme.prop('checked', true);
-            $('body').removeClass("dark").addClass("light");
-            darkToLight();
-        }else{
-            changeTheme.prop('checked', false);
-            $('body').removeClass("light").addClass("dark");
-            lightToDark();
+    // ----- Typing effect -----
+    const words = ["Web Developer", "Laravel Developer", "React Developer", "Vue Developer"];
+    const typed = $('#typed');
+    let wordIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    function type() {
+        const word = words[wordIndex];
+        const current = word.substring(0, charIndex);
+        typed.text(current);
+        if (!deleting && charIndex < word.length) {
+            charIndex++;
+            setTimeout(type, 120);
+        } else if (deleting && charIndex > 0) {
+            charIndex--;
+            setTimeout(type, 60);
+        } else {
+            deleting = !deleting;
+            if (!deleting) wordIndex = (wordIndex + 1) % words.length;
+            setTimeout(type, 1200);
         }
-        
-        $('.intro-text').css({
-            opacity: 1,
-            transform: 'translateY(0)',
-        });
-    }, 3200);
+    }
+    type();
 
-    $("#sidebar").mCustomScrollbar({
-        theme: "minimal"
-    });
+    // ----- Topbar scroll state -----
+    const topbar = $('#topbar');
+    const scrollTopBtn = $('#scroll-top');
+    const heroDesc = $('.hero-desc');
 
+    $(window).on('scroll', function () {
+        const y = $(window).scrollTop();
+        topbar.toggleClass('scrolled', y > 20);
+        scrollTopBtn.toggleClass('show', y > 400);
 
-    // $('#moon').click(function() {
-    //     var currentPosition = parseInt($(this).css('left'));
-    //     var newPosition = currentPosition + 50; // Adjust the amount to move
-    
-    //     $(this).animate({ left: newPosition + 'px' }, 1000); // Adjust the duration as needed
-    //   });
-
-    // $('.second-text').on('animationend webkitAnimationEnd', function() {
-    //     // After the typing animation, show the intro-text
-    //     $('.intro-text').css({
-    //         opacity: 1,
-    //         transform: 'translateY(0)',
-    //     });
-    // });
-    // sidebar menu scroll
-    const menuItems = $('.sidebar-main .menu-items div a');
-    const contentSections = $('#content section');
-    $(window).scroll(function() {
-        // Get the current scroll position
-        const scrollY = $(window).scrollTop();
-        // Iterate through content sections
-        contentSections.each(function(index) {
-            const sectionTop = $(this).offset().top;
-            
-            // Check if the section is in the viewport
-            if (scrollY >= (sectionTop-400)) {
-                // Remove 'active' class from all menu items
-                menuItems.removeClass('active');
-                // Add 'active' class to the corresponding menu item
-                menuItems.eq(index).addClass('active');
+        // navbar active state
+        let current = 'home';
+        $('section').each(function () {
+            if (y >= $(this).offset().top - 120) {
+                current = $(this).attr('id');
             }
         });
-        
+        $('.nav-link').removeClass('active');
+        $(`.nav-link[data-section="${current}"]`).addClass('active');
+        $('.drawer-link').removeClass('active');
+        $(`.drawer-link[data-section="${current}"]`).addClass('active');
     });
-    
-    typeEffect();
 
-    // animaiton effect on scroll
-    // Function to check if an element is in the viewport
-    function isElementInViewport(elem) {
-        const rect = elem.getBoundingClientRect();
-        return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
-    }
+    // ----- Scroll top -----
+    scrollTopBtn.on('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 
-    // Function to add animation class when element is in viewport
-    function animateElements() {
-        $(".w-timeline-item").each(function () {
-        if (isElementInViewport(this)) {
-            $(this).removeClass("opacity-0");
-            $(this).addClass("downup-animation");
+    // ----- Mobile drawer -----
+    const drawer = $('#drawer');
+    const backdrop = $('#drawer-backdrop');
+
+    $('#menu-toggle').on('click', function () {
+        drawer.addClass('open');
+        backdrop.addClass('show');
+        $('body').css('overflow', 'hidden');
+    });
+
+    $('#drawer-close, #drawer-backdrop').on('click', function () {
+        drawer.removeClass('open');
+        backdrop.removeClass('show');
+        $('body').css('overflow', '');
+    });
+
+    $('.drawer-link').on('click', function () {
+        drawer.removeClass('open');
+        backdrop.removeClass('show');
+        $('body').css('overflow', '');
+    });
+
+    // ----- Reveal on scroll -----
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                $(entry.target).addClass('visible');
+                revealObserver.unobserve(entry.target);
             }
         });
+    }, { threshold: 0.12 });
 
-        $(".project-card").each(function () {
-            if (isElementInViewport(this)) {
-                $(this).removeClass("opacity-0");
-                $(this).addClass("downup-animation");
-                }
-            });
-    }
-
-    // Check for animations when scrolling
-    $(window).on("scroll", function () {
-        animateElements();
+    $('.reveal').each(function () {
+        revealObserver.observe(this);
     });
 
-
-        
+    // ----- Footer year -----
+    $('#year').text(new Date().getFullYear());
 });
